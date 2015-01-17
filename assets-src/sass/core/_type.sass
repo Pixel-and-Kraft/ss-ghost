@@ -1,0 +1,94 @@
+// -----------------------------------------
+// Vars -- Type
+
+$c-type: #333333
+$c-heading: #333333
+$c-muted: lighten($c-type, 27)
+
+$c-link: rgb(30, 120, 195)
+$c-link-hover: darken($c-link, 7)
+
+$font-family-heading: georgia
+$font-family-body: sans-serif
+
+$c-selection: white
+$c-selection-bg: yellow
+
+$c-hr: brown
+
+
+// -----------------------------------------
+// Type 
+
+body
+  line-height: 1.5
+  font-family: $font-family-body
+  color: $c-type
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 
+  font-family: $font-family-heading
+  line-height: 1.5em
+  color: $c-heading
+p +
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+    // !important unfortunately needed to override
+    // the owl selector from _base.sass 
+    // TODO: find a better approach to this
+    margin-top: 40px !important
+
+
+h1, .h1
+  font-size: 2.4em
+  font-weight: 300
+h2, .h2
+  font-size: 2em
+  font-weight: 400
+h3, .h3
+  font-size: 1.74em
+  font-weight: 400
+h4, .h4
+  font-size: 1.5em
+  font-weight: 400
+h5, .h5
+  font-size: 1.3em
+  font-weight: 500
+h6, .h6
+  font-size: 1em
+  font-weight: 600
+
+$font-size--p: 15px
+$line-height--p: 1.6
+p, ul, ol 
+ font-size: $font-size--p
+ line-height: $line-height--p
+p 
+  @include bpMax(700px)
+    text-align: justify
+
+a
+  color: $c-link
+  cursor: pointer
+  text-decoration: none
+  &:hover
+    color: $c-link-hover
+
+::selection
+  color: $c-selection
+  background: $c-selection-bg
+
+small 
+  font-size: .85em
+
+.content-text
+  ul, ol 
+    margin-top: .2rem
+    li+li 
+      margin-top: .1rem
+
+blockquote 
+  font-size: 1em;
+  background: darken($c-bg, 4);
+  border-radius: 0 3px 3px 0;
+  padding: .1rem .8rem;
+  margin-left: 0;
+  border-left: 3px solid tan;
